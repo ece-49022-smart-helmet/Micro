@@ -1,0 +1,28 @@
+/*
+ * BT.c
+ *
+ *  Created on: Apr 9, 2019
+ *      Author: sophiagould
+ */
+
+#include "main.h"
+#include <string.h>
+
+void BTCommandMode(*huart5){
+	char cmd[5];
+	HAL_GPIO_WritePin(GPIOPC5_GPIO_Port, GPIOPC5_Pin, GPIO_PIN_RESET);
+	HAL_UART_Receive(huart5, cmd, 5, 30);
+	if(strcmp(cmd, "CMD\r\n")){
+
+	}
+
+}
+
+void BTDataMode(){
+	HAL_GPIO_WritePin(GPIOPC5_GPIO_Port, GPIOPC5_Pin, GPIO_PIN_SET);
+}
+
+void BTChangeName(){
+	//change name of module
+}
+

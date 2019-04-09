@@ -1,0 +1,23 @@
+02:30:35 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+Finished building: ../Src/BT.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10004	     20	   1884	  11908	   2e84	micro.elf
+ 
+
+02:30:37 Build Finished (took 1s.913ms)
+

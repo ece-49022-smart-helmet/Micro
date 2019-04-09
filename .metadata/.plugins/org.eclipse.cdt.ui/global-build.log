@@ -1,0 +1,401 @@
+01:54:20 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTCommandMode':
+../Src/BT.c:14:19: error: 'huart5' undeclared (first use in this function)
+  HAL_UART_Receive(huart5, cmd, 5);
+                   ^~~~~~
+../Src/BT.c:14:19: note: each undeclared identifier is reported only once for each function it appears in
+../Src/BT.c:14:27: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive' differ in signedness [-Wpointer-sign]
+  HAL_UART_Receive(huart5, cmd, 5);
+                           ^~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:697:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+../Src/BT.c:14:2: error: too few arguments to function 'HAL_UART_Receive'
+  HAL_UART_Receive(huart5, cmd, 5);
+  ^~~~~~~~~~~~~~~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:697:19: note: declared here
+ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+make: *** [Src/BT.o] Error 1
+01:57:36 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTCommandMode':
+../Src/BT.c:11:6: warning: type of 'huart5' defaults to 'int' [-Wimplicit-int]
+ void BTCommandMode(huart5){
+      ^~~~~~~~~~~~~
+../Src/BT.c:14:19: warning: passing argument 1 of 'HAL_UART_Receive' makes pointer from integer without a cast [-Wint-conversion]
+  HAL_UART_Receive(huart5, cmd, 5);
+                   ^~~~~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:697:19: note: expected 'UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}' but argument is of type 'int'
+ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+../Src/BT.c:14:27: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive' differ in signedness [-Wpointer-sign]
+  HAL_UART_Receive(huart5, cmd, 5);
+                           ^~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:697:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+../Src/BT.c:14:2: error: too few arguments to function 'HAL_UART_Receive'
+  HAL_UART_Receive(huart5, cmd, 5);
+  ^~~~~~~~~~~~~~~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:697:19: note: declared here
+ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+make: *** [Src/BT.o] Error 1
+01:58:39 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTCommandMode':
+../Src/BT.c:11:6: warning: type of 'huart5' defaults to 'int' [-Wimplicit-int]
+ void BTCommandMode(huart5){
+      ^~~~~~~~~~~~~
+../Src/BT.c:14:19: warning: passing argument 1 of 'HAL_UART_Receive' makes pointer from integer without a cast [-Wint-conversion]
+  HAL_UART_Receive(huart5, cmd, 5, 30);
+                   ^~~~~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:697:19: note: expected 'UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}' but argument is of type 'int'
+ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+../Src/BT.c:14:27: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive' differ in signedness [-Wpointer-sign]
+  HAL_UART_Receive(huart5, cmd, 5, 30);
+                           ^~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:697:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+Finished building: ../Src/BT.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9756	     20	   1884	  11660	   2d8c	micro.elf
+ 
+02:00:29 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c:11:20: error: expected declaration specifiers or '...' before '*' token
+ void BTCommandMode(*huart5){
+                    ^
+make: *** [Src/BT.o] Error 1
+02:02:16 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTCommandMode':
+../Src/BT.c:14:27: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive' differ in signedness [-Wpointer-sign]
+  HAL_UART_Receive(huart5, cmd, 5, 30);
+                           ^~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:697:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+Finished building: ../Src/BT.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9728	     20	   1884	  11632	   2d70	micro.elf
+ 
+02:03:59 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTCommandMode':
+../Src/BT.c:15:12: warning: pointer targets in passing argument 1 of 'strcmp' differ in signedness [-Wpointer-sign]
+  if(strcmp(cmd, "CMD\r\n")){
+            ^~~
+In file included from ../Src/BT.c:9:0:
+/Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/arm-none-eabi/include/string.h:36:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcmp (const char *, const char *);
+      ^~~~~~
+Finished building: ../Src/BT.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9728	     20	   1884	  11632	   2d70	micro.elf
+ 
+02:04:15 **** Incremental Build of configuration Debug for project micro ****
+make all 
+make: Nothing to be done for `all'.
+02:15:21 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTCommandMode':
+../Src/BT.c:15:13: warning: pointer targets in passing argument 1 of 'strcmp' differ in signedness [-Wpointer-sign]
+  if(!strcmp(cmd, "CMD\r\n")){
+             ^~~
+In file included from ../Src/BT.c:9:0:
+/Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/arm-none-eabi/include/string.h:36:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcmp (const char *, const char *);
+      ^~~~~~
+../Src/BT.c: In function 'BTDataMode':
+../Src/BT.c:28:13: warning: pointer targets in passing argument 1 of 'strcmp' differ in signedness [-Wpointer-sign]
+  if(!strcmp(end, "END\r\n")){
+             ^~~
+In file included from ../Src/BT.c:9:0:
+/Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/arm-none-eabi/include/string.h:36:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcmp (const char *, const char *);
+      ^~~~~~
+Finished building: ../Src/BT.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9748	     20	   1884	  11652	   2d84	micro.elf
+ 
+02:26:15 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTCommandMode':
+../Src/BT.c:15:13: warning: pointer targets in passing argument 1 of 'strcmp' differ in signedness [-Wpointer-sign]
+  if(!strcmp(cmd, "CMD\r\n")){
+             ^~~
+In file included from ../Src/BT.c:9:0:
+/Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/arm-none-eabi/include/string.h:36:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcmp (const char *, const char *);
+      ^~~~~~
+../Src/BT.c: In function 'BTDataMode':
+../Src/BT.c:28:13: warning: pointer targets in passing argument 1 of 'strcmp' differ in signedness [-Wpointer-sign]
+  if(!strcmp(end, "END\r\n")){
+             ^~~
+In file included from ../Src/BT.c:9:0:
+/Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/arm-none-eabi/include/string.h:36:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcmp (const char *, const char *);
+      ^~~~~~
+../Src/BT.c: In function 'BTChangeName':
+../Src/BT.c:37:17: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  uint8_t name = "SN,SmartHelmet";
+                 ^~~~~~~~~~~~~~~~
+../Src/BT.c:38:28: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  HAL_UART_Transmit(huart5, name, 14, 30);
+                            ^~~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:696:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~
+Finished building: ../Src/BT.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10004	     20	   1884	  11908	   2e84	micro.elf
+ 
+02:29:03 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTChangeName':
+../Src/BT.c:37:18: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  uint8_t* name = "SN,SmartHelmet";
+                  ^~~~~~~~~~~~~~~~
+Finished building: ../Src/BT.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10004	     20	   1884	  11908	   2e84	micro.elf
+ 
+02:29:15 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTChangeName':
+../Src/BT.c:37:17: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  uint8_t name = "SN,SmartHelmet";
+                 ^~~~~~~~~~~~~~~~
+../Src/BT.c:38:28: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  HAL_UART_Transmit(huart5, name, 14, 30);
+                            ^~~~
+In file included from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/stm32f4xx_hal_conf.h:373:0,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from /Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc/main.h:31,
+                 from ../Src/BT.c:8:
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:696:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~
+Finished building: ../Src/BT.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10004	     20	   1884	  11908	   2e84	micro.elf
+ 
+02:29:47 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+../Src/BT.c: In function 'BTChangeName':
+../Src/BT.c:37:18: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  uint8_t* name = "SN,SmartHelmet";
+                  ^~~~~~~~~~~~~~~~
+Finished building: ../Src/BT.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10004	     20	   1884	  11908	   2e84	micro.elf
+ 
+02:30:35 **** Incremental Build of configuration Debug for project micro ****
+make all 
+Building file: ../Src/BT.c
+Invoking: MCU GCC Compiler
+/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F405xx -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/Users/sophiagould/Documents/Spring 2019/ECE49022micro/micro/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/BT.d" -MT"Src/BT.o" -o "Src/BT.o" "../Src/BT.c"
+Finished building: ../Src/BT.c
+ 
+Building target: micro.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F405RGTx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "micro.elf" @"objects.list"   -lm
+Finished building target: micro.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "micro.elf" "micro.hex"
+arm-none-eabi-size "micro.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10004	     20	   1884	  11908	   2e84	micro.elf
+ 

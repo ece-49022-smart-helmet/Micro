@@ -1,0 +1,15 @@
+/*
+ * BT.c
+ *
+ *  Created on: Apr 9, 2019
+ *      Author: sophiagould
+ */
+
+#include "main.h"
+
+void BLECommandMode(){
+//put BLE into Command Mode MO PC5 --> BT GPIO9
+	HAL_GPIO_WritePin(GPIOPC5_GPIO_Port, GPIOPC5_Pin, GPIO_PIN_RESET);
+}
+
+
