@@ -20,10 +20,10 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "BT.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "BT.h"
 
 /* USER CODE END Includes */
 
@@ -98,9 +98,6 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  BTCommandMode(&huart5);
-  BTChangeName(&huart5);
-  BTDataMode(&huart5);
 
   /* USER CODE END SysInit */
 
@@ -122,6 +119,14 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
+	  BTCommandMode(&huart5);
+	  HAL_Delay(100);
+	  //BTChangeName(&huart5);
+	  //HAL_Delay(100);
+	  BTChangeAuth(&huart5);
+	  HAL_Delay(100);
+	  BTDataMode(&huart5);
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -216,7 +221,7 @@ static void MX_ADC3_Init(void)
   }
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. 
   */
-  sConfig.Channel = ADC_CHANNEL_10;
+  sConfig.Channel = ADC_CHANNEL_11;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc3, &sConfig) != HAL_OK)

@@ -1,5 +1,5 @@
 #MicroXplorer Configuration settings - do not modify
-ADC3.Channel-0\#ChannelRegularConversion=ADC_CHANNEL_10
+ADC3.Channel-0\#ChannelRegularConversion=ADC_CHANNEL_11
 ADC3.IPParameters=Rank-0\#ChannelRegularConversion,Channel-0\#ChannelRegularConversion,SamplingTime-0\#ChannelRegularConversion,NbrOfConversionFlag
 ADC3.NbrOfConversionFlag=1
 ADC3.Rank-0\#ChannelRegularConversion=1
@@ -101,8 +101,10 @@ PC2.Locked=true
 PC2.Signal=ADCx_IN12
 PC3.Mode=Full_Duplex_Master
 PC3.Signal=SPI2_MOSI
-PC5.GPIOParameters=PinState,GPIO_Label
+PC5.GPIOParameters=PinState,GPIO_PuPd,GPIO_Label,GPIO_ModeDefaultOutputPP
 PC5.GPIO_Label=GPIOPC5
+PC5.GPIO_ModeDefaultOutputPP=GPIO_MODE_OUTPUT_PP
+PC5.GPIO_PuPd=GPIO_NOPULL
 PC5.Locked=true
 PC5.PinState=GPIO_PIN_SET
 PC5.Signal=GPIO_Output

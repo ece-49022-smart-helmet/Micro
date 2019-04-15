@@ -8,8 +8,9 @@
 #ifndef BT_H_
 #define BT_H_
 
-void BTCommandMode(UART_HandleTypeDef*);
+uint8_t BTCommandMode(UART_HandleTypeDef*);
 void BTDataMode(UART_HandleTypeDef*);
+void BTChangeAuth(UART_HandleTypeDef*);
 
 void BTChangeName(UART_HandleTypeDef*);
 
