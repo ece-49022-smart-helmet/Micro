@@ -5,6 +5,7 @@
  *      Author: sophiagould
  */
 
+#include "BT.h"
 #include "main.h"
 #include <string.h>
 

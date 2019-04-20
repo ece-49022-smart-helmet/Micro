@@ -5,7 +5,10 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Src/BT.c \
+../Src/app.c \
+../Src/audio.c \
 ../Src/main.c \
+../Src/oledRetrieve.c \
 ../Src/stm32f4xx_hal_msp.c \
 ../Src/stm32f4xx_it.c \
 ../Src/syscalls.c \
@@ -13,7 +16,10 @@ C_SRCS += \
 
 OBJS += \
 ./Src/BT.o \
+./Src/app.o \
+./Src/audio.o \
 ./Src/main.o \
+./Src/oledRetrieve.o \
 ./Src/stm32f4xx_hal_msp.o \
 ./Src/stm32f4xx_it.o \
 ./Src/syscalls.o \
@@ -21,7 +27,10 @@ OBJS += \
 
 C_DEPS += \
 ./Src/BT.d \
+./Src/app.d \
+./Src/audio.d \
 ./Src/main.d \
+./Src/oledRetrieve.d \
 ./Src/stm32f4xx_hal_msp.d \
 ./Src/stm32f4xx_it.d \
 ./Src/syscalls.d \
