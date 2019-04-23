@@ -30,12 +30,12 @@ void ADCSampling(ADC_HandleTypeDef* hadc1, ADC_HandleTypeDef* hadc2, ADC_HandleT
 	}
 	if (HAL_ADC_PollForConversion(hadc2, 1000) == HAL_OK){
 		hadc2Value = HAL_ADC_GetValue(hadc2);
-		if (hadc1Value == 0){
+		/*if (hadc1Value == 0){
 			hadc2Value = 0;
 		}else if(hadc2Value < 200){
 			hadc2Value = 0;
 			hadc1Value = 0;
-		}
+		}*/
 	}
 	if (HAL_ADC_PollForConversion(hadc3, 1000) == HAL_OK){
 		hadc3Value = HAL_ADC_GetValue(hadc3);
@@ -69,44 +69,38 @@ void ADCSampling(ADC_HandleTypeDef* hadc1, ADC_HandleTypeDef* hadc2, ADC_HandleT
 */
 
 	hadcFinal1 = (hadc1Value - hadc2Value);
-	test = hadcFinal1;
 	if (hadcFinal1 > 4096){
 		hadcFinal1 = 0;
-		if(hadc3Value > 240){
-			hadcFinal1 = hadc3Value - 240;
-		}
-		check = 1;
 	}
 	else{
 		hadcFinal1 = (hadcFinal1 *10);
-		if(hadc3Value > 240){
-			hadcFinal1 = hadcFinal1 + (hadc3Value - 240);
-		}
-		check = 0;
+	}
+
+
+	if(hadc3Value > 240){
+		//hadcFinal1 = hadcFinal1 + (hadc3Value - 240);
 	}
 
 	hadcFinal2 = (hadc2Value - hadc1Value);
 	if (hadcFinal2 > 4096){
 		hadcFinal2 = 0;
-		if(hadc3Value < 90){
-			hadcFinal2 = 90 - hadc3Value;
-		}
 	}
-	else if(check == 0 && hadcFinal2 < 100){
+	/*else if(hadcFinal2 < 100){
 		hadcFinal2 = 0;
 		if(hadc3Value < 90){
-			hadcFinal2 = 90 - hadc3Value;
+			//hadcFinal2 = 90 - hadc3Value;
 		}
-	}
+	}*/
 	else{
 		hadcFinal2 = hadcFinal2 *10;
-		if(hadc3Value < 90){
-			hadcFinal2 = hadcFinal2 + (90 - hadc3Value);
-		}
 	}
 
-/*
+	if(hadc3Value < 90){
+		//hadcFinal2 = hadcFinal2 + (90 - hadc3Value);
+	}
 
+
+/*
 	if (hadc1Value < 955){
 		hadcFinal2 = 955 - hadc1Value;
 	}else if(hadc1Value > 955){
@@ -117,6 +111,7 @@ void ADCSampling(ADC_HandleTypeDef* hadc1, ADC_HandleTypeDef* hadc2, ADC_HandleT
 		hadcFinal2 = 0;
 	}
 */
+
 	HAL_DAC_SetValue(hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, hadcFinal1);
 	HAL_DAC_SetValue(hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, hadcFinal2);
 

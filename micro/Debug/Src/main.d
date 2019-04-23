@@ -35,7 +35,9 @@ Src/main.o: ../Src/main.c \
  /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/BT.h \
  /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/audio.h \
- /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/app.h
+ /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/app.h \
+ /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/images.h \
+ /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/oled.h
 
 /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/main.h:
 
@@ -110,3 +112,7 @@ Src/main.o: ../Src/main.c \
 /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/audio.h:
 
 /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/app.h:
+
+/Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/images.h:
+
+/Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Inc/oled.h:

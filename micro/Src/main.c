@@ -26,6 +26,8 @@
 #include "BT.h"
 #include "audio.h"
 #include "app.h"
+#include "images.h"
+#include "oled.h"
 
 /* USER CODE END Includes */
 
@@ -74,6 +76,7 @@ static void MX_ADC1_Init(void);
 static void MX_ADC2_Init(void);
 /* USER CODE BEGIN PFP */
 
+uint8_t input[2];
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -91,6 +94,38 @@ void user_pwm_setvalue(uint16_t value)
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 }
 */
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	//huart->pRxBuffPtr[0];
+
+	switch(input[0]){
+	case 'l':
+		IMG_turnLeft();
+		break;
+	case 'r':
+		IMG_turnRight();
+		break;
+	case 'n':
+		IMG_headNorth();
+		break;
+	case 'e':
+		IMG_headEast();
+		break;
+	case 's':
+		if(input[1] == 'o'){
+			IMG_headSouth();
+		}else if(input[1] == 't'){
+			IMG_goStraight();
+		}
+		break;
+	case 'w':
+		IMG_headWest();
+		break;
+	case 'a':
+		IMG_drawDickButt();
+		break;
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -106,7 +141,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-    HAL_Init();
+  HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -130,7 +165,9 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
-
+  OLED_init();
+  OLED_sendCommand(OLED_COMMAND_SLEEP_MODE_OFF);
+  OLED_clear();
   //app_preloop(&huart5);
 
 
@@ -151,13 +188,17 @@ int main(void)
 
 
   while (1)
+
   {
+	  //OLED_sendCommand(0xAF);
+	  //OLED_sendCommand(0xA6);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  HAL_UART_Receive_IT(&huart5, input, 2);
 
 	  ADCSampling(&hadc1, &hadc2, &hadc3, &hdac);
-	  oleditup(&huart5);
+	  //oleditup(&huart5);
   }
   /* USER CODE END 3 */
 }
@@ -553,12 +594,22 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOPC5_GPIO_Port, GPIOPC5_Pin, GPIO_PIN_SET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : GPIOPC5_Pin */
   GPIO_InitStruct.Pin = GPIOPC5_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOPC5_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PB1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PA9 */
   GPIO_InitStruct.Pin = GPIO_PIN_9;

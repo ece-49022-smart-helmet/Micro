@@ -7,7 +7,9 @@ C_SRCS += \
 ../Src/BT.c \
 ../Src/app.c \
 ../Src/audio.c \
+../Src/images.c \
 ../Src/main.c \
+../Src/oled.c \
 ../Src/oledRetrieve.c \
 ../Src/stm32f4xx_hal_msp.c \
 ../Src/stm32f4xx_it.c \
@@ -18,7 +20,9 @@ OBJS += \
 ./Src/BT.o \
 ./Src/app.o \
 ./Src/audio.o \
+./Src/images.o \
 ./Src/main.o \
+./Src/oled.o \
 ./Src/oledRetrieve.o \
 ./Src/stm32f4xx_hal_msp.o \
 ./Src/stm32f4xx_it.o \
@@ -29,7 +33,9 @@ C_DEPS += \
 ./Src/BT.d \
 ./Src/app.d \
 ./Src/audio.d \
+./Src/images.d \
 ./Src/main.d \
+./Src/oled.d \
 ./Src/oledRetrieve.d \
 ./Src/stm32f4xx_hal_msp.d \
 ./Src/stm32f4xx_it.d \
