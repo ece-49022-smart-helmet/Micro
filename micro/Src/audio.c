@@ -78,7 +78,7 @@ void ADCSampling(ADC_HandleTypeDef* hadc1, ADC_HandleTypeDef* hadc2, ADC_HandleT
 
 
 	if(hadc3Value > 240){
-		//hadcFinal1 = hadcFinal1 + (hadc3Value - 240);
+		hadcFinal1 = hadcFinal1 + (hadc3Value - 240);
 	}
 
 	hadcFinal2 = (hadc2Value - hadc1Value);
@@ -96,7 +96,7 @@ void ADCSampling(ADC_HandleTypeDef* hadc1, ADC_HandleTypeDef* hadc2, ADC_HandleT
 	}
 
 	if(hadc3Value < 90){
-		//hadcFinal2 = hadcFinal2 + (90 - hadc3Value);
+		hadcFinal2 = hadcFinal2 + (90 - hadc3Value);
 	}
 
 
