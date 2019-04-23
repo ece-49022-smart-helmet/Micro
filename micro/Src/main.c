@@ -57,6 +57,8 @@ I2S_HandleTypeDef hi2s3;
 
 SPI_HandleTypeDef hspi2;
 
+TIM_HandleTypeDef htim9;
+
 UART_HandleTypeDef huart5;
 
 /* USER CODE BEGIN PV */
@@ -74,6 +76,7 @@ static void MX_UART5_Init(void);
 static void MX_USB_OTG_FS_USB_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_ADC2_Init(void);
+static void MX_TIM9_Init(void);
 /* USER CODE BEGIN PFP */
 
 uint8_t input[2];
@@ -126,6 +129,17 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		break;
 	}
 }
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	ADCSampling(&hadc1, &hadc2, &hadc3, &hdac);
+	HAL_UART_Receive_IT(&huart5, input, 2);
+}
+
+//void HAL_TIM_IRQHandler=(TIM_HandleTypeDef *htim){
+//	 ADCSampling(&hadc1, &hadc2, &hadc3, &hdac);
+//}
+
 /* USER CODE END 0 */
 
 /**
@@ -164,6 +178,7 @@ int main(void)
   MX_USB_OTG_FS_USB_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
+  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
   OLED_init();
   OLED_sendCommand(OLED_COMMAND_SLEEP_MODE_OFF);
@@ -182,10 +197,15 @@ int main(void)
   HAL_DAC_Start(&hdac, DAC_CHANNEL_1);
   //HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
   HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
-
+  HAL_TIM_Base_Start_IT(&htim9);
   //int pwm_value = 0;
   //int step = 0;
 
+  OLED_sendCommand(0xAF);
+  //OLED_sendCommand(0xA5);
+  HAL_UART_Receive_IT(&huart5, input, 2);
+
+  OLED_clear();
 
   while (1)
 
@@ -197,7 +217,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  HAL_UART_Receive_IT(&huart5, input, 2);
 
-	  ADCSampling(&hadc1, &hadc2, &hadc3, &hdac);
+
 	  //oleditup(&huart5);
   }
   /* USER CODE END 3 */
@@ -518,6 +538,44 @@ static void MX_SPI2_Init(void)
   /* USER CODE BEGIN SPI2_Init 2 */
 
   /* USER CODE END SPI2_Init 2 */
+
+}
+
+/**
+  * @brief TIM9 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM9_Init(void)
+{
+
+  /* USER CODE BEGIN TIM9_Init 0 */
+
+  /* USER CODE END TIM9_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+
+  /* USER CODE BEGIN TIM9_Init 1 */
+
+  /* USER CODE END TIM9_Init 1 */
+  htim9.Instance = TIM9;
+  htim9.Init.Prescaler = 1;
+  htim9.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim9.Init.Period = 1;
+  htim9.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim9.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim9) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim9, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM9_Init 2 */
+
+  /* USER CODE END TIM9_Init 2 */
 
 }
 

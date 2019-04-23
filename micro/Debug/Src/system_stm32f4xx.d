@@ -31,6 +31,8 @@ Src/system_stm32f4xx.o: ../Src/system_stm32f4xx.c \
  /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+ /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 
 /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
@@ -96,5 +98,9 @@ Src/system_stm32f4xx.o: ../Src/system_stm32f4xx.c \
 /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 
 /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
+
+/Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
+
+/Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 /Users/sophiagould/Documents/Spring2019/ECE49022micro/micro/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:

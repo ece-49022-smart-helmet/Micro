@@ -3,24 +3,33 @@
 
 
 extern SPI_HandleTypeDef hspi2;
+extern TIM_HandleTypeDef htim9;
 
 void OLED_sendData(uint8_t * buf, int sz)
 {
+	//HAL_NVIC_DisableIRQ(TIM1_BRK_TIM9_IRQn);
+	//HAL_TIM_Base_Stop(&htim9);
 	HAL_GPIO_WritePin(GPIOB, OLED_PIN_DC, GPIO_PIN_SET); // data mode
 	//HAL_Delay(1);
 	//HAL_GPIO_WritePin(GPIOB, OLED_PIN_CS, GPIO_PIN_RESET); // select device
 	HAL_SPI_Transmit(&hspi2, buf, sz, 1000);
 	//HAL_GPIO_WritePin(GPIOB, OLED_PIN_CS, GPIO_PIN_SET); // unselect device
+	//HAL_TIM_Base_Start(&htim9);
+	//HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
 }
 
 void OLED_sendCommand(uint8_t command)
 {
+	//HAL_NVIC_DisableIRQ(TIM1_BRK_TIM9_IRQn);
+	//HAL_TIM_Base_Stop(&htim9);
 	HAL_GPIO_WritePin(GPIOB, OLED_PIN_DC, GPIO_PIN_RESET); // command mode
 	//HAL_Delay(10);
 	//HAL_GPIO_WritePin(GPIOB, OLED_PIN_CS, GPIO_PIN_RESET); // select device
 	HAL_SPI_Transmit(&hspi2, &command, 1, 1000);
 	//HAL_Delay(10);
 	HAL_GPIO_WritePin(GPIOB, OLED_PIN_DC, GPIO_PIN_SET); // unselect device
+	//HAL_TIM_Base_Start(&htim9);
+	//HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
 }
 
 void OLED_sendParam(uint8_t command, uint8_t param1)
