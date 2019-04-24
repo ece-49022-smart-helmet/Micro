@@ -41,7 +41,7 @@ void BTChangeName(UART_HandleTypeDef* huart5){
 }
 
 void BTChangeAuth(UART_HandleTypeDef* huart5){
-	char* auth = "SA,0\n";
+	char* auth = "SA,4\n";
 		HAL_UART_Transmit(huart5, (uint8_t*) auth, 5, 30);
 }
 

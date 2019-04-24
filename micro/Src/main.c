@@ -79,7 +79,7 @@ static void MX_ADC2_Init(void);
 static void MX_TIM9_Init(void);
 /* USER CODE BEGIN PFP */
 
-uint8_t input[2];
+uint8_t input[1] = {0};
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -98,42 +98,58 @@ void user_pwm_setvalue(uint16_t value)
 }
 */
 
+void sendBack(uint8_t let){
+	//uint8_t response[5] = "ACK\0\0";
+	//response[3] = input;
+
+	uint8_t resp[] = {'A','C','K',let,0};
+//	HAL_UART_Transmit(huart5, "ACK", 3, 30);
+	HAL_UART_Transmit(&huart5, resp, 5, 30);
+}
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	//huart->pRxBuffPtr[0];
-
+	uint8_t let = input[0];
 	switch(input[0]){
-	case 'l':
+	case 'a':
+		IMG_drawDickButt(); //arrived
+		break;
+	case 'b':
 		IMG_turnLeft();
 		break;
-	case 'r':
+	case 'B':
+		IMG_drawBoobs();
+		break;
+	case 'c':
 		IMG_turnRight();
 		break;
-	case 'n':
+	case 'd':
 		IMG_headNorth();
 		break;
 	case 'e':
 		IMG_headEast();
 		break;
-	case 's':
-		if(input[1] == 'o'){
-			IMG_headSouth();
-		}else if(input[1] == 't'){
-			IMG_goStraight();
-		}
+	case 'f':
+		IMG_headSouth();
 		break;
-	case 'w':
+	case 'g':
 		IMG_headWest();
 		break;
-	case 'a':
-		IMG_drawDickButt();
+	case 'h':
+		IMG_goStraight();
+		break;
+	case 'i':
+		IMG_goStraight();
 		break;
 	}
+	sendBack(let);
+
 }
 
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	ADCSampling(&hadc1, &hadc2, &hadc3, &hdac);
-	HAL_UART_Receive_IT(&huart5, input, 2);
+	HAL_UART_Receive_IT(&huart5, input, 1);
 }
 
 //void HAL_TIM_IRQHandler=(TIM_HandleTypeDef *htim){
@@ -182,6 +198,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   OLED_init();
   OLED_sendCommand(OLED_COMMAND_SLEEP_MODE_OFF);
+  OLED_sendCommand(0xA5);
+  OLED_sendCommand(0xA6);
   OLED_clear();
   //app_preloop(&huart5);
 
@@ -190,7 +208,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
+  //HAL_UART_Receive_IT(&huart5, input, 1);
   HAL_ADC_Start(&hadc1);
   HAL_ADC_Start(&hadc2);
   HAL_ADC_Start(&hadc3);
@@ -201,10 +219,8 @@ int main(void)
   //int pwm_value = 0;
   //int step = 0;
 
-  OLED_sendCommand(0xAF);
+  OLED_sendCommand(0xAF); //next 4 lines may be reason for OLED halting
   //OLED_sendCommand(0xA5);
-  HAL_UART_Receive_IT(&huart5, input, 2);
-
   OLED_clear();
 
   while (1)
@@ -215,7 +231,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_UART_Receive_IT(&huart5, input, 2);
+	  HAL_UART_Receive_IT(&huart5, input, 1);
 
 
 	  //oleditup(&huart5);
